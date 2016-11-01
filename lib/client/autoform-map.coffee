@@ -34,7 +34,7 @@ AutoForm.addInputType 'map',
 
 Template.afMap.created = ->
 	@mapReady = new ReactiveVar false
-	GoogleMaps.load(libraries: 'places')
+	GoogleMaps.load(_.extend libraries: 'places', @data.atts.googleMap)
 
 	@_stopInterceptValue = false
 	@_interceptValue = (ctx) ->
